@@ -22,9 +22,9 @@ namespace PersonDataManagement
                 new Person("203456882", "Winston", "1208 Alex st, Newyork,NY", 65)
             };
 
-            foreach(var person in personList)
+            foreach(Person person in personList.FindAll(e => (e.Age < 60)).Take(2).ToList())
             {
-                Console.WriteLine(person.Adress);
+                Console.WriteLine("Name: " + person.Name + "\t\tAge: " + person.Age);
             }
             Console.ReadKey();
         }
